@@ -8,7 +8,7 @@ import MenuSection from "./components/menu/MenuSection.jsx";
 import ProductModal from "./components/menu/ProductModal.jsx";
 import BackToTop from "./components/ui/BackToTop.jsx";
 import Reveal from "./components/ui/Reveal.jsx";
-import DoodleBackground from "./components/ui/DoodleBackground.jsx";
+import DoodleBackground, { MENU_LAYOUT } from "./components/ui/DoodleBackground.jsx";
 import { PRODUCTS } from "./data/products.js";
 import { CATEGORY_META } from "./components/icons/categoryIcons.js";
 
@@ -49,13 +49,13 @@ export default function App() {
   const selectedProduct = PRODUCTS.find((p) => p.id === selectedId) || null;
 
   return (
-    <div className="relative min-h-screen bg-preto text-creme scroll-smooth">
-      <DoodleBackground />
-      <div className="relative z-10">
+    <div className="min-h-screen bg-preto text-creme scroll-smooth">
       <Header onNavigate={scrollTo} />
       <Hero onNavigate={scrollTo} />
 
-      <main className="max-w-[1100px] mx-auto px-6">
+      <div className="relative">
+        <DoodleBackground layout={MENU_LAYOUT} />
+        <main className="relative z-10 max-w-[1100px] mx-auto px-6">
         <div className="pt-14">
           <MenuSection
             id="frutosdomar"
@@ -116,13 +116,13 @@ export default function App() {
           products={byCategory("Farinha Panko")}
           onOpenProduct={openProduct}
         />
+        </main>
+      </div>
 
-        <ContactSection />
-      </main>
+      <ContactSection />
 
       <Footer />
       <BackToTop />
-      </div>
 
       {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProduct} />}
     </div>

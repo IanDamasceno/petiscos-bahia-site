@@ -1,6 +1,9 @@
+import DoodleBackground, { HERO_LAYOUT } from "../ui/DoodleBackground.jsx";
+
 export default function Hero({ onNavigate }) {
   return (
-    <section className="relative overflow-hidden text-center px-6 pt-16 pb-16 border-b-4 border-vermelho bg-[radial-gradient(ellipse_at_50%_-10%,#232028_0%,#111014_60%)]">
+    <section className="relative overflow-hidden text-center px-6 pt-16 pb-16 bg-[radial-gradient(ellipse_at_50%_-10%,#232028_0%,#111014_60%)]">
+      <DoodleBackground layout={HERO_LAYOUT} />
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
