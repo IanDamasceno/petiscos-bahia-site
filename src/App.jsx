@@ -8,6 +8,7 @@ import MenuSection from "./components/menu/MenuSection.jsx";
 import ProductModal from "./components/menu/ProductModal.jsx";
 import BackToTop from "./components/ui/BackToTop.jsx";
 import Reveal from "./components/ui/Reveal.jsx";
+import DoodleBackground from "./components/ui/DoodleBackground.jsx";
 import { PRODUCTS } from "./data/products.js";
 import { CATEGORY_META } from "./components/icons/categoryIcons.js";
 
@@ -48,7 +49,9 @@ export default function App() {
   const selectedProduct = PRODUCTS.find((p) => p.id === selectedId) || null;
 
   return (
-    <div className="min-h-screen bg-preto text-creme scroll-smooth">
+    <div className="relative min-h-screen bg-preto text-creme scroll-smooth">
+      <DoodleBackground />
+      <div className="relative z-10">
       <Header onNavigate={scrollTo} />
       <Hero onNavigate={scrollTo} />
 
@@ -81,13 +84,20 @@ export default function App() {
         />
 
         <Reveal className="my-16">
-          <div className="bg-gradient-to-br from-vermelho-escuro to-vermelho rounded-2xl px-8 py-11 text-center">
-            <h3 className="font-baloo text-2xl md:text-3xl text-amarelo-2 mb-2.5">
-              A Pioneira da Verdadeira Comida de Boteco
-            </h3>
-            <p className="max-w-lg mx-auto text-creme">
-              Do freezer direto para a fritadeira: praticidade sem abrir mão do sabor autêntico.
-            </p>
+          <div className="bg-gradient-to-br from-vermelho-escuro to-vermelho rounded-2xl px-8 py-11 flex flex-col md:flex-row items-center justify-center gap-7 text-center md:text-left">
+            <img
+              src="/images/logo_petiscoscia.png"
+              alt="Logo Petiscos & Cia Alimentos"
+              className="w-[150px] md:w-[170px] shrink-0 drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)]"
+            />
+            <div>
+              <h3 className="font-baloo text-2xl md:text-3xl text-amarelo-2 mb-2.5">
+                A Pioneira da Verdadeira Comida de Boteco
+              </h3>
+              <p className="max-w-lg text-creme">
+                Do freezer direto para a fritadeira: praticidade sem abrir mão do sabor autêntico.
+              </p>
+            </div>
           </div>
         </Reveal>
 
@@ -112,6 +122,7 @@ export default function App() {
 
       <Footer />
       <BackToTop />
+      </div>
 
       {selectedProduct && <ProductModal product={selectedProduct} onClose={closeProduct} />}
     </div>

@@ -1,8 +1,6 @@
-import { Flame } from "lucide-react";
-
 export default function Hero({ onNavigate }) {
   return (
-    <section className="relative overflow-hidden text-center px-6 pt-20 pb-16 border-b-4 border-vermelho bg-[radial-gradient(ellipse_at_50%_-10%,#232028_0%,#111014_60%)]">
+    <section className="relative overflow-hidden text-center px-6 pt-16 pb-16 border-b-4 border-vermelho bg-[radial-gradient(ellipse_at_50%_-10%,#232028_0%,#111014_60%)]">
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -10,7 +8,11 @@ export default function Hero({ onNavigate }) {
           backgroundSize: "26px 26px",
         }}
       />
-      <Flame className="mx-auto mb-4 text-vermelho animate-float" size={38} />
+      <img
+        src="/images/logo_bahia.png"
+        alt="Logo Petiscos Bahia"
+        className="animate-float mx-auto mb-2 w-[190px] md:w-[230px] drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
+      />
       <span className="animate-ribbon-in inline-block bg-vermelho text-creme font-baloo font-bold text-base md:text-lg px-6 py-2.5 rounded-md shadow-lg -rotate-2 mb-6">
         Qualidade em Alimentos
       </span>
