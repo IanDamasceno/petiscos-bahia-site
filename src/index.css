@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background: #111014;
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+}
+
+.font-baloo {
+  font-family: "Baloo 2", "Segoe UI", sans-serif;
+}
