@@ -1,9 +1,5 @@
 const NAV = [
-  { id: "frutosdomar", label: "Frutos do Mar" },
-  { id: "bolinhos", label: "Bolinhos" },
-  { id: "carnes", label: "Carnes & Aves" },
-  { id: "sobremesa", label: "Sobremesa" },
-  { id: "panko", label: "Panko" },
+  { id: "cardapio", label: "Catálogo" },
   { id: "contato", label: "Contato" },
 ];
 

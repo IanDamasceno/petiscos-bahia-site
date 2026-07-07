@@ -1,5 +1,6 @@
 /**
- * Dados de todos os itens do cardápio.
+ * Dados de todos os itens do cardápio, na mesma ordem em que aparecem
+ * no catálogo em PDF original (páginas 3 a 9).
  *
  * Os campos `modoPreparo`, `conservacao` e `ingredientes` são OPCIONAIS.
  * Se um item não tiver esses campos preenchidos, o site usa o texto
@@ -26,7 +27,7 @@ export const GENERIC_INFO = {
 };
 
 export const PRODUCTS = [
-  // Frutos do mar
+  // Página 3
   {
     id: "camafeu_camarao",
     categoria: "Frutos do Mar",
@@ -48,6 +49,8 @@ export const PRODUCTS = [
     title: "Bolinho de Bacalhau",
     desc: "Preparados com bacalhau desfiado e batatas, temperado com ervas finas e especiarias.",
   },
+
+  // Página 4
   {
     id: "pastel_camarao",
     categoria: "Frutos do Mar",
@@ -55,8 +58,13 @@ export const PRODUCTS = [
     title: "Pastel de Camarão",
     desc: "Pastéis crocantes recheados com camarões bem temperados e suculentos.",
   },
-
-  // Bolinhos e croquetas
+  {
+    id: "pastel_carne_queijo",
+    categoria: "Carnes, Aves & Especiais",
+    peso: "350g",
+    title: "Pastel de Carne com Queijo",
+    desc: "Pastéis crocantes recheados com carne bem temperada e queijo derretido na medida certa.",
+  },
   {
     id: "croqueta_cupim",
     categoria: "Bolinhos & Croquetas",
@@ -64,6 +72,15 @@ export const PRODUCTS = [
     title: "Croqueta de Cupim",
     desc: "Feita com cupim desfiado e bem temperado, recheado com queijo cremoso derretido, envolta em casquinha crocante.",
   },
+  {
+    id: "pimenta_recheada",
+    categoria: "Carnes, Aves & Especiais",
+    peso: "350g",
+    title: "Pimenta Recheada com Carne",
+    desc: "Pimentas selecionadas, recheadas com carne bem temperada, cobertas com farinha panko, para os amantes de pimenta.",
+  },
+
+  // Página 5
   {
     id: "quibe_recheado",
     categoria: "Bolinhos & Croquetas",
@@ -92,6 +109,8 @@ export const PRODUCTS = [
     title: "Bolinho BBQ",
     desc: "Costela suína desfiada, temperada e finalizada com molho barbecue defumado.",
   },
+
+  // Página 6
   {
     id: "bolinho_mandioca_carne_seca",
     categoria: "Bolinhos & Croquetas",
@@ -120,28 +139,14 @@ export const PRODUCTS = [
     title: "Dadinho de Tapioca",
     desc: "Feito com tapioca granulada e queijo coalho derretido. Crocante por fora e macio por dentro.",
   },
+
+  // Página 7
   {
     id: "palitinho_mineiro",
     categoria: "Bolinhos & Croquetas",
     peso: "350g",
     title: "Palitinho Mineiro",
     desc: "Tiras de queijo provolone, envolto em uma casquinha crocante de panko.",
-  },
-
-  // Carnes, aves e especiais
-  {
-    id: "pastel_carne_queijo",
-    categoria: "Carnes, Aves & Especiais",
-    peso: "350g",
-    title: "Pastel de Carne com Queijo",
-    desc: "Pastéis crocantes recheados com carne bem temperada e queijo derretido na medida certa.",
-  },
-  {
-    id: "pimenta_recheada",
-    categoria: "Carnes, Aves & Especiais",
-    peso: "350g",
-    title: "Pimenta Recheada com Carne",
-    desc: "Pimentas selecionadas, recheadas com carne bem temperada, cobertas com farinha panko, para os amantes de pimenta.",
   },
   {
     id: "asa_desossada",
@@ -164,6 +169,8 @@ export const PRODUCTS = [
     title: "Panceta Rústica",
     desc: "Torresmo de barriga, cortado em mini discos, temperado e preparado até alcançar uma crocância perfeita.",
   },
+
+  // Página 8
   {
     id: "torresmo_pururuca",
     categoria: "Carnes, Aves & Especiais",
@@ -171,8 +178,6 @@ export const PRODUCTS = [
     title: "Torresmo Pururuca",
     desc: "Pele de porco selecionada e desidratada, preparada com tempero especial. Sabor irresistível e textura pururuca.",
   },
-
-  // Sobremesa
   {
     id: "petit_gateau",
     categoria: "Sobremesa",
@@ -182,8 +187,6 @@ export const PRODUCTS = [
     modoPreparo:
       "Leve ao forno ou micro-ondas conforme instruções da embalagem até aquecer bem o recheio. Sirva com sorvete e calda de chocolate.",
   },
-
-  // Farinha panko
   {
     id: "panko_flocada",
     categoria: "Farinha Panko",
@@ -203,5 +206,36 @@ export const PRODUCTS = [
     modoPreparo:
       "Utilize para empanar carnes, aves, peixes e legumes antes de fritar, assar ou preparar no air fryer.",
     conservacao: "Armazene em local seco e arejado, ao abrigo da luz solar.",
+  },
+
+  // Página 9
+  {
+    id: "ligante_romariz",
+    categoria: "Insumos",
+    peso: "1kg",
+    title: "Ligante Romariz",
+    desc: "Base líquida, usada para fixar as farinhas de rosca, panko ou milho no alimento. Substitui o uso de ovos batidos, deixando o empanamento mais sequinho, crocante, durável e econômico.",
+    modoPreparo:
+      "Dilua conforme instruções da embalagem e utilize para umedecer o alimento antes de empanar, no lugar do ovo batido.",
+    conservacao: "Armazene em local fresco e seco. Após aberto, mantenha refrigerado.",
+  },
+  {
+    id: "batata_desidratada",
+    categoria: "Insumos",
+    peso: "1kg",
+    title: "Batata Desidratada Romariz",
+    desc: "100% batata desidratada em flocos. Batata cozida e processada, que teve sua água removida, facilitando o armazenamento e preparo rápido. Substitui a batata fresca em diversas receitas. Produto importado.",
+    modoPreparo:
+      "Hidrate com água ou leite quente conforme instruções da embalagem até obter o purê ou a consistência desejada.",
+    conservacao: "Armazene em local seco e arejado, ao abrigo da luz solar.",
+  },
+  {
+    id: "creme_pimenta",
+    categoria: "Insumos",
+    peso: "150g",
+    title: "Creme de Pimenta",
+    desc: "Molho cremoso de pimenta, elaborado com uma combinação equilibrada de pimentas selecionadas e tempero goiano. Dois tipos: molho mexicano ou extraforte.",
+    modoPreparo: "Sirva como acompanhamento de petiscos, carnes e lanches em geral.",
+    conservacao: "Mantenha refrigerado após aberto e consuma dentro do prazo indicado na embalagem.",
   },
 ];

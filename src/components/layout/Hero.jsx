@@ -1,9 +1,13 @@
-import DoodleBackground, { HERO_LAYOUT } from "../ui/DoodleBackground.jsx";
+import { useRef } from "react";
+import { ChevronDown } from "lucide-react";
+import DoodleBorder from "../ui/DoodleBorder.jsx";
 
 export default function Hero({ onNavigate }) {
+  const contentRef = useRef(null);
+
   return (
-    <section className="relative overflow-hidden text-center px-6 pt-16 pb-16 bg-[radial-gradient(ellipse_at_50%_-10%,#232028_0%,#111014_60%)]">
-      <DoodleBackground layout={HERO_LAYOUT} />
+    <section className="relative overflow-hidden text-center px-10 sm:px-6 min-h-screen flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_-10%,#232028_0%,#111014_60%)]">
+      <DoodleBorder contentRef={contentRef} />
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -11,38 +15,42 @@ export default function Hero({ onNavigate }) {
           backgroundSize: "26px 26px",
         }}
       />
-      <img
-        src="/images/logo_bahia.png"
-        alt="Logo Petiscos Bahia"
-        className="animate-float mx-auto mb-2 w-[190px] md:w-[230px] drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
-      />
-      <span className="animate-ribbon-in inline-block bg-vermelho text-creme font-baloo font-bold text-base md:text-lg px-6 py-2.5 rounded-md shadow-lg -rotate-2 mb-6">
-        Qualidade em Alimentos
-      </span>
-      <h1
-        className="animate-title-in font-baloo font-extrabold text-amarelo leading-none text-[clamp(2.4rem,7vw,5rem)]"
-        style={{ WebkitTextStroke: "2px #7A1420" }}
-      >
-        Petiscos Bahia
-      </h1>
-      <p className="max-w-xl mx-auto mt-5 mb-8 text-creme-suave text-base md:text-lg">
-        Petiscos congelados prontos para fritar: bolinhos, pastéis, croquetas e muito mais — a
-        verdadeira comida de boteco, direto para o seu balcão.
-      </p>
-      <div className="flex gap-4 justify-center flex-wrap">
-        <button
-          onClick={() => onNavigate("frutosdomar")}
-          className="bg-amarelo text-preto font-semibold px-6 py-3.5 rounded-lg hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(245,197,24,0.28)] transition-all"
+      <div ref={contentRef} className="relative z-10 inline-block">
+        <img
+          src="/images/logo_bahia.png"
+          alt="Logo Petiscos Bahia"
+          className="animate-float mx-auto mb-6 w-[220px] md:w-[280px] drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
+        />
+        <h1
+          className="animate-title-in font-baloo font-extrabold text-amarelo leading-none text-[clamp(3rem,9vw,6.5rem)]"
+          style={{ WebkitTextStroke: "2px #7A1420" }}
         >
-          Ver cardápio
-        </button>
-        <button
-          onClick={() => onNavigate("contato")}
-          className="border-2 border-amarelo text-amarelo font-semibold px-6 py-3.5 rounded-lg hover:bg-amarelo hover:text-preto hover:-translate-y-0.5 transition-all"
-        >
-          Fazer pedido
-        </button>
+          Petiscos Bahia
+        </h1>
+        <div className="flex gap-5 justify-center flex-wrap mt-10">
+          <button
+            onClick={() => onNavigate("cardapio")}
+            className="bg-amarelo text-preto font-bold text-lg px-10 py-5 rounded-xl hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(245,197,24,0.28)] transition-all"
+          >
+            Ver catálogo
+          </button>
+          <button
+            onClick={() => onNavigate("contato")}
+            className="border-2 border-amarelo text-amarelo font-bold text-lg px-10 py-5 rounded-xl hover:bg-amarelo hover:text-preto hover:-translate-y-0.5 transition-all"
+          >
+            Agendar visita
+          </button>
+        </div>
       </div>
+
+      <button
+        onClick={() => onNavigate("cardapio")}
+        aria-label="Veja o catálogo"
+        className="animate-pulse absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-amarelo hover:text-amarelo-2 transition-colors"
+      >
+        <span className="text-sm font-semibold tracking-wide">Veja o catálogo</span>
+        <ChevronDown size={26} />
+      </button>
     </section>
   );
 }
