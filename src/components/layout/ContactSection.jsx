@@ -1,6 +1,7 @@
+import { useRef } from "react";
 import { MessageCircle } from "lucide-react";
 import Reveal from "../ui/Reveal.jsx";
-import DoodleBackground, { CONTACT_LAYOUT } from "../ui/DoodleBackground.jsx";
+import DoodleBorder from "../ui/DoodleBorder.jsx";
 
 const CONTACTS = [
   { label: "Atendimento 1", phoneDisplay: "(73) 99912-9091", phoneWa: "5573999129091" },
@@ -8,10 +9,13 @@ const CONTACTS = [
 ];
 
 export default function ContactSection() {
+  const contentRef = useRef(null);
+
   return (
     <section id="contato" className="relative py-16">
-      <DoodleBackground layout={CONTACT_LAYOUT} />
-      <div className="relative z-10 max-w-[1100px] mx-auto px-6">
+      <DoodleBorder contentRef={contentRef} />
+      <div className="relative z-10 max-w-[1100px] mx-auto px-10 sm:px-6">
+      <div ref={contentRef}>
       <Reveal className="text-center mb-10">
         <span className="text-vermelho font-bold text-sm tracking-[2px] uppercase">
           Fale com a gente
@@ -39,6 +43,7 @@ export default function ContactSection() {
             </div>
           </Reveal>
         ))}
+      </div>
       </div>
       </div>
     </section>

@@ -1,37 +1,66 @@
+import { useRef } from "react";
 import Reveal from "../ui/Reveal.jsx";
+import { useIsMobile } from "../../hooks/useIsMobile.js";
 
 export default function Card({ product, delay, onOpen }) {
-  return (
-    <Reveal delay={delay}>
-      <button
-        onClick={() => onOpen(product)}
-        className="group relative bg-preto-2 border border-[#2c2a31] rounded-xl overflow-hidden h-full w-full text-left hover:-translate-y-1.5 hover:border-amarelo hover:shadow-[0_14px_30px_rgba(0,0,0,0.4)] transition-all duration-300 cursor-pointer"
-      >
-        <div className="w-full h-40 overflow-hidden bg-[#0d0c0f] relative">
-          <img
-            src={`/images/${product.id}.jpg`}
-            alt={product.title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
-            loading="lazy"
-          />
-          <span className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300 flex items-center justify-center">
-            <span className="opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300 text-amarelo text-xs font-bold tracking-wide uppercase bg-black/60 px-3 py-1.5 rounded-full">
-              Ver detalhes
-            </span>
+  const cardRef = useRef(null);
+  const isMobile = useIsMobile();
+
+  const handleClick = () => {
+    if (!isMobile) return;
+    const rect = cardRef.current?.getBoundingClientRect();
+    onOpen(product, rect);
+  };
+
+  const content = (
+    <>
+      <div className="w-full aspect-[4/3] bg-preto-2 flex items-center justify-center overflow-hidden">
+        <img
+          src={`/images/${product.id}.jpg`}
+          alt={product.title}
+          className="w-full h-full object-contain"
+          loading="lazy"
+        />
+      </div>
+      <div className="p-3 sm:p-5">
+        {product.peso && (
+          <span className="inline-block bg-vermelho-escuro text-amarelo-2 text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full mb-1.5 sm:mb-2.5 tracking-wide">
+            {product.peso}
           </span>
-        </div>
-        <div className="p-5">
-          {product.peso && (
-            <span className="inline-block bg-vermelho-escuro text-amarelo-2 text-[11px] font-bold px-2.5 py-1 rounded-full mb-2.5 tracking-wide">
-              {product.peso}
-            </span>
-          )}
-          <h4 className="font-baloo text-creme text-lg leading-tight mb-1.5 group-hover:text-amarelo transition-colors">
-            {product.title}
-          </h4>
-          <p className="text-sm text-creme-suave leading-relaxed">{product.desc}</p>
-        </div>
-      </button>
+        )}
+        <h4 className="font-baloo text-creme text-sm sm:text-lg leading-tight mb-1 sm:mb-1.5">
+          {product.title}
+        </h4>
+        <p className="hidden sm:block text-sm text-creme-suave leading-relaxed">{product.desc}</p>
+        <p className="sm:hidden text-xs font-semibold text-amarelo uppercase tracking-wide">
+          Ver detalhes
+        </p>
+      </div>
+    </>
+  );
+
+  if (isMobile) {
+    return (
+      <Reveal delay={delay} className="h-full">
+        <button
+          ref={cardRef}
+          onClick={handleClick}
+          className="flex flex-col text-left bg-preto-2 border border-[#2c2a31] rounded-xl overflow-hidden h-full w-full cursor-pointer hover:border-amarelo transition-colors"
+        >
+          {content}
+        </button>
+      </Reveal>
+    );
+  }
+
+  return (
+    <Reveal delay={delay} className="h-full">
+      <div
+        ref={cardRef}
+        className="flex flex-col bg-preto-2 border border-[#2c2a31] rounded-xl overflow-hidden h-full w-full"
+      >
+        {content}
+      </div>
     </Reveal>
   );
 }
