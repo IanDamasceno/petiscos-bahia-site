@@ -1,4 +1,4 @@
-import { Fish, ChefHat, Beef, IceCreamCone, Wheat } from "lucide-react";
+import { Fish, ChefHat, Beef, IceCreamCone, Wheat, FlaskConical } from "lucide-react";
 
 export const CATEGORY_META = {
   "Frutos do Mar": { icon: Fish },
@@ -6,4 +6,5 @@ export const CATEGORY_META = {
   "Carnes, Aves & Especiais": { icon: Beef },
   Sobremesa: { icon: IceCreamCone },
   "Farinha Panko": { icon: Wheat },
+  Insumos: { icon: FlaskConical },
 };
