@@ -32,7 +32,7 @@ export const PRODUCTS = [
     id: "camafeu_camarao",
     categoria: "Frutos do Mar",
     peso: "400g",
-    title: "Camafeu de Camarão GG",
+    title: "Camafeu de Camarão",
     desc: "Camarões selecionados, recheados com cream cheese cremoso, empanados na farinha panko crocante.",
   },
   {
@@ -56,7 +56,7 @@ export const PRODUCTS = [
     categoria: "Frutos do Mar",
     peso: "350g",
     title: "Pastel de Camarão",
-    desc: "Pastéis crocantes recheados com camarões bem temperados e suculentos.",
+    desc: "Pastéis crocantes recheados com molho de camarão bem temperado e suculento.",
   },
   {
     id: "pastel_carne_queijo",
@@ -91,7 +91,7 @@ export const PRODUCTS = [
   {
     id: "disquinho_costela",
     categoria: "Bolinhos & Croquetas",
-    peso: null,
+    peso: "350g",
     title: "Disquinho de Costela com Cheddar e Bacon",
     desc: "Disquinhos crocantes de costela bovina desfiada, recheados com cheddar cremoso e finalizados com bacon crocante.",
   },
@@ -121,7 +121,7 @@ export const PRODUCTS = [
   {
     id: "bolinho_lampiao",
     categoria: "Bolinhos & Croquetas",
-    peso: null,
+    peso: "350g",
     title: "Bolinho Lampião",
     desc: "Massa de abóbora cremosa, recheada com carne seca desfiada, temperada na medida certa.",
   },
@@ -142,18 +142,11 @@ export const PRODUCTS = [
 
   // Página 7
   {
-    id: "palitinho_mineiro",
-    categoria: "Bolinhos & Croquetas",
-    peso: "350g",
-    title: "Palitinho Mineiro",
-    desc: "Tiras de queijo provolone, envolto em uma casquinha crocante de panko.",
-  },
-  {
-    id: "asa_desossada",
+    id: "panceta_rustica",
     categoria: "Carnes, Aves & Especiais",
-    peso: "650g",
-    title: "Asa Desossada Recheada com Queijo e Presunto",
-    desc: "Asa de frango desossada cuidadosamente, recheada com queijo derretido e presunto saboroso, temperada na medida certa.",
+    peso: "450g",
+    title: "Panceta Rústica",
+    desc: "Torresmo de barriga, cortado em cubos, cuidadosamente temperado e preparado até alcançar uma crocância perfeita.",
   },
   {
     id: "moela_frango",
@@ -163,18 +156,25 @@ export const PRODUCTS = [
     desc: "Moelas de frango macias e bem temperadas, cozidas em molho encorpado, levemente picante e bastante saboroso.",
   },
   {
-    id: "panceta_rustica",
+    id: "asa_desossada",
     categoria: "Carnes, Aves & Especiais",
-    peso: "450g",
-    title: "Panceta Rústica",
-    desc: "Torresmo de barriga, cortado em mini discos, temperado e preparado até alcançar uma crocância perfeita.",
+    peso: "650g",
+    title: "Asa Desossada Recheada com Queijo e Presunto",
+    desc: "Asa de frango desossada cuidadosamente, recheada com queijo derretido e presunto saboroso, temperada na medida certa.",
+  },
+  {
+    id: "palitinho_mineiro",
+    categoria: "Bolinhos & Croquetas",
+    peso: "350g",
+    title: "Palitinho Mineiro",
+    desc: "Tiras de queijo provolone, envolto em uma casquinha crocante de panko.",
   },
 
   // Página 8
   {
     id: "torresmo_pururuca",
     categoria: "Carnes, Aves & Especiais",
-    peso: null,
+    peso: "1kg",
     title: "Torresmo Pururuca",
     desc: "Pele de porco selecionada e desidratada, preparada com tempero especial. Sabor irresistível e textura pururuca.",
   },
@@ -191,7 +191,7 @@ export const PRODUCTS = [
     id: "panko_flocada",
     categoria: "Farinha Panko",
     peso: "1kg",
-    title: "Farinha Panko Flocada Romariz",
+    title: "Farinha Panko",
     desc: "Farinha panko tradicional, ideal para empanar com máxima crocância.",
     modoPreparo:
       "Utilize para empanar carnes, aves, peixes e legumes antes de fritar, assar ou preparar no air fryer.",
@@ -232,9 +232,18 @@ export const PRODUCTS = [
   {
     id: "creme_pimenta",
     categoria: "Insumos",
-    peso: "150g",
-    title: "Creme de Pimenta",
-    desc: "Molho cremoso de pimenta, elaborado com uma combinação equilibrada de pimentas selecionadas e tempero goiano. Dois tipos: molho mexicano ou extraforte.",
+    peso: "150ml",
+    title: "Creme de Pimenta Mexicana",
+    desc: "Molho cremoso de pimenta, elaborado com uma combinação equilibrada de pimentas selecionadas e tempero goiano.",
+    modoPreparo: "Sirva como acompanhamento de petiscos, carnes e lanches em geral.",
+    conservacao: "Mantenha refrigerado após aberto e consuma dentro do prazo indicado na embalagem.",
+  },
+  {
+    id: "pimenta_carolina_reaper",
+    categoria: "Insumos",
+    peso: "150ml",
+    title: "Creme de Pimenta Carolina Reaper",
+    desc: "Creme de pimenta confeccionado com a famosa pimenta Carolina Reaper, eleita uma das mais picantes do mundo.",
     modoPreparo: "Sirva como acompanhamento de petiscos, carnes e lanches em geral.",
     conservacao: "Mantenha refrigerado após aberto e consuma dentro do prazo indicado na embalagem.",
   },
