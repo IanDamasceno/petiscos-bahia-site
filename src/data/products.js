@@ -56,7 +56,7 @@ export const PRODUCTS = [
     categoria: "Frutos do Mar",
     peso: "350g",
     title: "Pastel de Camarão",
-    desc: "Pastéis crocantes recheados com camarões bem temperados e suculentos.",
+    desc: "Pastéis crocantes recheados com molho de camarão bem temperado e suculento.",
   },
   {
     id: "pastel_carne_queijo",
@@ -91,7 +91,7 @@ export const PRODUCTS = [
   {
     id: "disquinho_costela",
     categoria: "Bolinhos & Croquetas",
-    peso: null,
+    peso: "350g",
     title: "Disquinho de Costela com Cheddar e Bacon",
     desc: "Disquinhos crocantes de costela bovina desfiada, recheados com cheddar cremoso e finalizados com bacon crocante.",
   },
@@ -121,7 +121,7 @@ export const PRODUCTS = [
   {
     id: "bolinho_lampiao",
     categoria: "Bolinhos & Croquetas",
-    peso: null,
+    peso: "350g",
     title: "Bolinho Lampião",
     desc: "Massa de abóbora cremosa, recheada com carne seca desfiada, temperada na medida certa.",
   },
@@ -167,14 +167,14 @@ export const PRODUCTS = [
     categoria: "Carnes, Aves & Especiais",
     peso: "450g",
     title: "Panceta Rústica",
-    desc: "Torresmo de barriga, cortado em mini discos, temperado e preparado até alcançar uma crocância perfeita.",
+    desc: "Torresmo de barriga, cortado em cubos, cuidadosamente temperado e preparado até alcançar uma crocância perfeita.",
   },
 
   // Página 8
   {
     id: "torresmo_pururuca",
     categoria: "Carnes, Aves & Especiais",
-    peso: null,
+    peso: "1kg",
     title: "Torresmo Pururuca",
     desc: "Pele de porco selecionada e desidratada, preparada com tempero especial. Sabor irresistível e textura pururuca.",
   },
@@ -232,10 +232,13 @@ export const PRODUCTS = [
   {
     id: "creme_pimenta",
     categoria: "Insumos",
-    peso: "150g",
-    title: "Creme de Pimenta",
-    desc: "Molho cremoso de pimenta, elaborado com uma combinação equilibrada de pimentas selecionadas e tempero goiano. Dois tipos: molho mexicano ou extraforte.",
+    peso: "150ml",
+    title: "Creme de Pimenta Mexicana",
+    desc: "Molho cremoso de pimenta, elaborado com uma combinação equilibrada de pimentas selecionadas e tempero goiano.",
     modoPreparo: "Sirva como acompanhamento de petiscos, carnes e lanches em geral.",
     conservacao: "Mantenha refrigerado após aberto e consuma dentro do prazo indicado na embalagem.",
   },
+  // Pimenta Carolina Reaper (150ml) listada no catálogo atualizado, mas ainda
+  // sem foto da embalagem — adicionar ao array acima assim que a imagem
+  // "pimenta_carolina_reaper.jpg" existir em /public/images.
 ];
