@@ -16,9 +16,9 @@ export default function Catalogo() {
   const contentRef = useRef(null);
 
   return (
-    <section id="cardapio" aria-label="Catálogo de produtos" className="relative">
+    <section id="cardapio" aria-label="Catálogo de produtos" className="relative lg:px-28">
       <DoodleBorder contentRef={contentRef} />
-      <div ref={contentRef} className="relative z-10 max-w-[900px] mx-auto">
+      <div ref={contentRef} className="relative z-10">
         {PAGINAS.map((p, i) => (
           <img
             key={p.n}
