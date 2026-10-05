@@ -1,13 +1,8 @@
-import { useRef } from "react";
 import { ChevronDown } from "lucide-react";
-import DoodleBorder from "../ui/DoodleBorder.jsx";
 
 export default function Hero({ onNavigate }) {
-  const contentRef = useRef(null);
-
   return (
     <section className="relative overflow-hidden text-center px-10 sm:px-6 min-h-screen flex flex-col items-center justify-center">
-      <DoodleBorder contentRef={contentRef} />
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
@@ -15,7 +10,7 @@ export default function Hero({ onNavigate }) {
           backgroundSize: "26px 26px",
         }}
       />
-      <div ref={contentRef} className="relative z-10 inline-block">
+      <div className="relative z-10 inline-block">
         <img
           src="/images/logo_bahia.png"
           alt="Logo Petiscos Bahia"
