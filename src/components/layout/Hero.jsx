@@ -6,7 +6,7 @@ export default function Hero({ onNavigate }) {
   const contentRef = useRef(null);
 
   return (
-    <section className="relative overflow-hidden text-center px-10 sm:px-6 min-h-screen flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_-10%,#232028_0%,#111014_60%)]">
+    <section className="relative overflow-hidden text-center px-10 sm:px-6 min-h-screen flex flex-col items-center justify-center">
       <DoodleBorder contentRef={contentRef} />
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"

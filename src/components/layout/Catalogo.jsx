@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import DoodleBorder from "../ui/DoodleBorder.jsx";
+
 const PAGINAS = [
   { n: "03", h: 1965, alt: "Camafeu de Camarão, Bolinho de Salmão e Bolinho de Bacalhau" },
   { n: "04", h: 1840, alt: "Pastel de Camarão, Pastel de Carne com Queijo, Croqueta de Cupim e Pimenta Recheada com Carne" },
@@ -10,9 +13,12 @@ const PAGINAS = [
 ];
 
 export default function Catalogo() {
+  const contentRef = useRef(null);
+
   return (
-    <section id="cardapio" aria-label="Catálogo de produtos" className="bg-black">
-      <div className="max-w-[900px] mx-auto">
+    <section id="cardapio" aria-label="Catálogo de produtos" className="relative">
+      <DoodleBorder contentRef={contentRef} />
+      <div ref={contentRef} className="relative z-10 max-w-[900px] mx-auto">
         {PAGINAS.map((p, i) => (
           <img
             key={p.n}
