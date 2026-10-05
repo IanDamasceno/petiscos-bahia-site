@@ -11,8 +11,14 @@ const PAGINAS = [
 
 export default function Catalogo() {
   return (
-    <section id="cardapio" aria-label="Catálogo de produtos">
-      <div className="max-w-[900px] mx-auto">
+    <section id="cardapio" aria-label="Catálogo de produtos" className="relative">
+      {/* Faixa amarela da página 3 até as bordas: altura = pontas da onda (66px de 1486px) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 bg-[#F9E43E]"
+        style={{ height: "calc(min(100vw, 900px) * 66 / 1486)" }}
+      />
+      <div className="relative max-w-[900px] mx-auto">
         {PAGINAS.map((p, i) => (
           <img
             key={p.n}
