@@ -8,7 +8,7 @@ export default {
         worksans: ["'Work Sans'", "sans-serif"],
       },
       colors: {
-        preto: "#111014",
+        preto: "#000000",
         "preto-2": "#19171d",
         amarelo: "#F5C518",
         "amarelo-2": "#FFE27A",
